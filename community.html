@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community & Impact | The Black Nerd Library</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ======= HEADER / NAV ======= -->
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo">The Black Nerd Library</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="community.html" class="active">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="button">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO SECTION ======= -->
+  <section class="hero fade-in">
+    <div class="container hero-content">
+      <h2>Community & Impact</h2>
+      <p>Building a more connected, inclusive society through partnerships, events, and real-world support.</p>
+    </div>
+  </section>
+
+  <!-- ======= IMPACT STORIES SECTION ======= -->
+  <section class="community fade-in">
+    <div class="container">
+      <h2>Our Impact</h2>
+      <p>At The Black Nerd Library, we measure our success by the lives we help shape. From therapy milestones to inclusive workshops, our programs foster growth and understanding for everyone.</p>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Family Stories</h3>
+          <p>Read inspiring journeys from families whose lives have changed through our services.</p>
+        </div>
+        <div class="card">
+          <h3>Inclusive Events</h3>
+          <p>Workshops, awareness campaigns, and open houses that bring our community together.</p>
+        </div>
+        <div class="card">
+          <h3>Volunteer Highlights</h3>
+          <p>Our dedicated volunteers and partners make inclusion real every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PARTNERS SECTION ======= -->
+  <section class="community fade-in">
+    <div class="container">
+      <h2>Our Partners</h2>
+      <p>We proudly work alongside local schools, nonprofits, businesses, and government agencies to expand our reach and foster a culture of inclusion and understanding.</p>
+    </div>
+  </section>
+
+  <!-- ======= UPCOMING EVENTS SECTION ======= -->
+  <section class="community fade-in">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <p>Join us for our next workshops, family meet-ups, or community awareness campaigns. Stay connected and help us grow our mission together.</p>
+      <!-- Later: you could embed a simple events calendar or list upcoming dates here -->
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; The Black Nerd Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======= FADE-IN SCRIPT ======= -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

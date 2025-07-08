@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | The Black Nerd Library</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ======= HEADER / NAV ======= -->
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo">The Black Nerd Library</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="button">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO SECTION ======= -->
+  <section class="hero fade-in">
+    <div class="container hero-content">
+      <h2>About The Black Nerd Library</h2>
+      <p>Where inclusion meets innovation — building community, one connection at a time.</p>
+    </div>
+  </section>
+
+  <!-- ======= MISSION & VISION SECTION ======= -->
+  <section class="about fade-in">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>We empower individuals with developmental disabilities and their families through accessible services, inclusive programs, and real community integration.</p>
+    </div>
+    <div class="container">
+      <h2>Our Vision</h2>
+      <p>To create a safe, innovative, and welcoming space where neurodivergent and neurotypical individuals learn, grow, and thrive together — bridging gaps for a more connected, understanding society.</p>
+    </div>
+  </section>
+
+  <!-- ======= TEAM SECTION ======= -->
+  <section class="about fade-in">
+    <div class="container">
+      <h2>Meet Our Team</h2>
+      <p>Our passionate founders, certified therapists, dedicated educators, and community partners work hand-in-hand to deliver holistic care and enrichment.</p>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Founders</h3>
+          <p>Visionaries with a mission to redefine inclusion and care for all minds.</p>
+        </div>
+        <div class="card">
+          <h3>Therapy Staff</h3>
+          <p>Experienced ABA, speech, occupational, and physical therapists.</p>
+        </div>
+        <div class="card">
+          <h3>Community Partners</h3>
+          <p>Local schools, businesses, and advocates who champion neurodiversity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PARTNERSHIPS SECTION ======= -->
+  <section class="about fade-in">
+    <div class="container">
+      <h2>Community Partnerships</h2>
+      <p>We proudly collaborate with schools, local businesses, nonprofits, and government agencies to expand our impact and build a more inclusive community.</p>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; The Black Nerd Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======= FADE-IN SCRIPT ======= -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

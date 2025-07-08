@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate | The Black Nerd Library</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ======= HEADER / NAV ======= -->
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo">The Black Nerd Library</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="active button">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO SECTION ======= -->
+  <section class="hero fade-in">
+    <div class="container hero-content">
+      <h2>Support Our Mission</h2>
+      <p>Your donation helps us empower neurodiverse communities, create inclusive programs, and provide life-changing resources to families who need them most.</p>
+    </div>
+  </section>
+
+  <!-- ======= HOW TO GIVE SECTION ======= -->
+  <section class="donate fade-in">
+    <div class="container">
+      <h2>How You Can Give</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>One-Time Gift</h3>
+          <p>Make a one-time contribution to help us launch new programs and reach more families.</p>
+        </div>
+        <div class="card">
+          <h3>Monthly Giving</h3>
+          <p>Become a sustaining donor to provide ongoing support for therapy, care, and enrichment labs.</p>
+        </div>
+        <div class="card">
+          <h3>In-Kind Support</h3>
+          <p>Donate supplies, equipment, or services — every contribution helps our community thrive.</p>
+        </div>
+      </div>
+      <a href="https://your-donation-link.com" class="button" target="_blank">Donate Now</a>
+      <p style="margin-top: 20px; font-size: 0.9rem;">* Link your real donation processor (PayPal, Stripe, CashApp, or another secure platform).</p>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; The Black Nerd Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======= FADE-IN SCRIPT ======= -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

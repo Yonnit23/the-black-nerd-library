@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | The Black Nerd Library</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ======= HEADER / NAV ======= -->
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo">The Black Nerd Library</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="donate.html" class="button">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO SECTION ======= -->
+  <section class="hero fade-in">
+    <div class="container hero-content">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Reach out to learn more, book a tour, partner with us, or get involved.</p>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT INFO SECTION ======= -->
+  <section class="contact fade-in">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:info@blacknerdlibrary.org" class="button">info@blacknerdlibrary.org</a></p>
+      <p>Phone: <a href="tel:123-456-7890" style="color:#4EC6E0;">123-456-7890</a></p>
+      <p>Address: 123 Inclusion Lane, Cincinnati, Ohio ZIP</p>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT FORM SECTION ======= -->
+  <section class="contact fade-in">
+    <div class="container">
+      <h2>Send Us a Message</h2>
+      <form action="#" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="button">Send Message</button>
+      </form>
+      <p style="margin-top: 20px; font-size: 0.9rem;">* This form is a placeholder. To make it work, connect it with a service like Formspree, Netlify Forms, or your email.</p>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; The Black Nerd Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======= FADE-IN SCRIPT ======= -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Black Nerd Library</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ======= HEADER / NAV ======= -->
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo">The Black Nerd Library</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="button">Donate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO SECTION ======= -->
+  <section class="hero fade-in">
+    <div class="container hero-content">
+      <h2>Empowering Neurodiverse Communities</h2>
+      <p>Inclusive care, therapy, and creative programs for every mind to thrive.</p>
+      <a href="#contact" class="button">Join Us</a>
+    </div>
+  </section>
+  
+  <!-- ======= WELCOME IMAGE SECTION ======= -->
+<section class="welcome fade-in">
+  <div class="container">
+    <img src="images/Screenshot 2025-07-07 at 11.35.24 PM.png" alt="Black Nerd Culture Library illustration showing diverse kids reading books" class="hero-image">
+    <p class="image-caption">Our vibrant, inclusive community in action.</p>
+  </div>
+</section>
+
+
+  <!-- ======= ABOUT SECTION ======= -->
+  <section id="about" class="about fade-in">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>The Black Nerd Library is a resource center for developmental disabilities and inclusive community support. We bridge gaps, build connections, and empower families through therapy, enrichment, and innovation.</p>
+    </div>
+  </section>
+
+  <!-- ======= SERVICES SECTION ======= -->
+  <section id="services" class="services fade-in">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Therapeutic Care</h3>
+          <p>ABA, speech, occupational & physical therapy by certified professionals.</p>
+        </div>
+        <div class="card">
+          <h3>Child & Dependent Care</h3>
+          <p>Inclusive classrooms and specialized care for all ages and needs.</p>
+        </div>
+        <div class="card">
+          <h3>Enrichment Labs</h3>
+          <p>Podcasting, music therapy, tech innovation, and social skill-building.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= COMMUNITY SECTION ======= -->
+  <section id="community" class="community fade-in">
+    <div class="container">
+      <h2>Community & Impact</h2>
+      <p>Workshops, inclusive events, and real-world opportunities to learn and grow together.</p>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT SECTION ======= -->
+  <section id="contact" class="contact fade-in">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Ready to connect? Reach out to learn more, book a tour, or join our programs!</p>
+      <a href="mailto:info@blacknerdlibrary.org" class="button">Email Us</a>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; The Black Nerd Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ======= FADE-IN SCRIPT ======= -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(
+      entries, appearOnScroll) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
